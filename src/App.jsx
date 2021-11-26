@@ -20,7 +20,7 @@ function App() {
   const isFriday = dayNumber === FRIDAY;
   const isWeekEnd = dayNumber === SATURDAY || dayNumber === SUNDAY;
 
-  const siteUrl = "https://estcequonmetenprodaujourdhui.vercel.app/";
+  const siteUrl = "https://estcequonmetenprodaujourdhui.vercel.app";
   const title = "Est-ce qu'on met un site en production aujourdhui ?";
   const text = `Un ${day} ?${isWeekEnd || isFriday ? '???!' : ''}`;
   const image = isWeekEnd ? logoNo : isFriday ? logoOSEF : logoYes;
@@ -33,7 +33,7 @@ function App() {
         <meta name="description" content={text} />
         <meta name="author" content={author} />
         <meta property="og:type" content="website" />
-        <meta property="og:url" content="https://estcequonmetenprodaujourdhui.vercel.app/" />
+        <meta property="og:url" content="https://estcequonmetenprodaujourdhui.vercel.app" />
         <meta property="og:title" content={title} />
         <meta property="og:description" content={text} />
         <meta property="og:image" content={`${siteUrl}${image}`} />
