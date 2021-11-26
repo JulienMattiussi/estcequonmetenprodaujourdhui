@@ -20,17 +20,23 @@ function App() {
   const isFriday = dayNumber === FRIDAY;
   const isWeekEnd = dayNumber === SATURDAY || dayNumber === SUNDAY;
 
+  const title = "Est-ce qu'on met un site en production aujourdhui ?";
   const text = `Un ${day} ?${isWeekEnd || isFriday ? '???!' : ''}`;
   const image = isWeekEnd ? logoNo : isFriday ? logoOSEF : logoYes;
 
   return (
     <div className="App">
     <Helmet>
-        <title>Est-ce qu'on met un site en production aujourdhui ?</title>
+        <title>{title}</title>
         <meta
             name="description"
             content={text}
         />
+        <meta property="og:type" content="website" />
+        <meta property="og:url" content="https://estcequonmetenprodaujourdhui.vercel.app/" />
+        <meta property="og:title" content={title} />
+        <meta property="og:description" content={text} />
+        <meta property="og:image" content={image} />
         <link rel="preload" href={image} as="image" />
     </Helmet>
       <header className="App-header">
