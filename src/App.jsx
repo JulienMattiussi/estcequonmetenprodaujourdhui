@@ -20,6 +20,7 @@ function App() {
   const isFriday = dayNumber === FRIDAY;
   const isWeekEnd = dayNumber === SATURDAY || dayNumber === SUNDAY;
 
+  const siteUrl = "https://estcequonmetenprodaujourdhui.vercel.app/";
   const title = "Est-ce qu'on met un site en production aujourdhui ?";
   const text = `Un ${day} ?${isWeekEnd || isFriday ? '???!' : ''}`;
   const image = isWeekEnd ? logoNo : isFriday ? logoOSEF : logoYes;
@@ -35,11 +36,11 @@ function App() {
         <meta property="og:url" content="https://estcequonmetenprodaujourdhui.vercel.app/" />
         <meta property="og:title" content={title} />
         <meta property="og:description" content={text} />
-        <meta property="og:image" content={image} />
+        <meta property="og:image" content={`${siteUrl}${image}`} />
         <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:image" content={image} />
+        <meta name="twitter:image" content={`${siteUrl}${image}`} />
         <meta name="twitter:creator" content={author} />
-        <link rel="preload" href={image} as="image" />
+        <link rel="preload" href={`${siteUrl}${image}`} as="image" />
     </Helmet>
       <header className="App-header">
         <h1>{text}</h1>
