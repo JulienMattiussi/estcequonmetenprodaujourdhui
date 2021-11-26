@@ -23,20 +23,22 @@ function App() {
   const title = "Est-ce qu'on met un site en production aujourdhui ?";
   const text = `Un ${day} ?${isWeekEnd || isFriday ? '???!' : ''}`;
   const image = isWeekEnd ? logoNo : isFriday ? logoOSEF : logoYes;
+  const author = "@YavaDeus"
 
   return (
     <div className="App">
     <Helmet>
         <title>{title}</title>
-        <meta
-            name="description"
-            content={text}
-        />
+        <meta name="description" content={text} />
+        <meta name="author" content={author} />
         <meta property="og:type" content="website" />
         <meta property="og:url" content="https://estcequonmetenprodaujourdhui.vercel.app/" />
         <meta property="og:title" content={title} />
         <meta property="og:description" content={text} />
         <meta property="og:image" content={image} />
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:image" content={image} />
+        <meta name="twitter:creator" content={author} />
         <link rel="preload" href={image} as="image" />
     </Helmet>
       <header className="App-header">
