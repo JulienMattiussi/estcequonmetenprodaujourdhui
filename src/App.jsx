@@ -1,4 +1,5 @@
 import React from 'react'
+import {Helmet} from "react-helmet";
 import { format } from 'date-fns'
 import { fr } from 'date-fns/locale'
 import logoYes from './yes.png'
@@ -19,11 +20,22 @@ function App() {
   const isFriday = dayNumber === FRIDAY;
   const isWeekEnd = dayNumber === SATURDAY || dayNumber === SUNDAY;
 
+  const text = `Un ${day} ?${isWeekEnd || isFriday ? '???!' : ''}`;
+  const image = isWeekEnd ? logoNo : isFriday ? logoOSEF : logoYes;
+
   return (
     <div className="App">
+    <Helmet>
+        <title>Est-ce qu'on met un site en production aujourdhui ?</title>
+        <meta
+            name="description"
+            content={text}
+        />
+        <link rel="preload" href={image} as="image" />
+    </Helmet>
       <header className="App-header">
-        <h1>Un {day} ?{isWeekEnd || isFriday ? '???!' : ''}</h1>
-        <img src={isWeekEnd ? logoNo : isFriday ? logoOSEF : logoYes} alt={isWeekEnd ? "Non" : isFriday ? "OSEF" : "Oui"} />
+        <h1>{text}</h1>
+        <img src={image} alt={isWeekEnd ? "Non" : isFriday ? "OSEF" : "Oui"} />
       </header>
     </div>
   )
