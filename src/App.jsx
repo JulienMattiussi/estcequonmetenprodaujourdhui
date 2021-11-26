@@ -36,9 +36,9 @@ function App() {
         <meta property="og:url" content="https://estcequonmetenprodaujourdhui.vercel.app" />
         <meta property="og:title" content={title} />
         <meta property="og:description" content={text} />
-        <meta property="og:image" content={`${siteUrl}${image}`} />
+        <meta property="og:image" content={`https://marmelab.com/static/small-4c45af40a2176a981b7b1c993195c921.jpg`} />
         <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:image" content={`${siteUrl}${image}`} />
+        <meta name="twitter:image" content={`https://marmelab.com/static/small-4c45af40a2176a981b7b1c993195c921.jpg`} />
         <meta name="twitter:creator" content={author} />
         <link rel="preload" href={`${siteUrl}${image}`} as="image" />
     </Helmet>
